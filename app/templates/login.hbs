@@ -1,0 +1,24 @@
+<h2>
+    Login to continue
+</h2>
+
+<div>
+    <form {{on "submit" this.authenticate}}>
+        <div>
+            <label for="identification">Login</label>
+            <input id="identification" placeholder="Enter Login" value={{this.identification}} {{on "change"
+                this.updateIdentification}} />
+        </div>
+
+        <div>
+            <label for="password">Password</label>
+            <input id="password" placeholder="Enter Password" value={{this.password}} {{on "change"
+                this.updatePassword}} />
+        </div>
+
+        <button type="submit" class="button">Login</button>
+        {{#if this.errorMessage}}
+        <p>{{this.errorMessage}}</p>
+        {{/if}}
+    </form>
+</div>
