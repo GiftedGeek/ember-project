@@ -1,3 +1,4 @@
+<NavBar />
 <h2>
     Login to continue
 </h2>
@@ -22,3 +23,14 @@
         {{/if}}
     </form>
 </div>
+
+{{#if error}}
+<p><strong>{{error}}</strong></p>
+{{/if}}
+
+{{!-- Bootstrap Form --}}
+{{!-- <BsForm @model={{this.login}} @onSubmit={{action "submit"}} as |form|>
+  <form.element @controlType="email" @label="Email" @placeholder="Email" @property="email" />
+  <form.element @controlType="password" @label="Password" @placeholder="Password" @property="password" @helpText="Minimum 6 characters" />
+  <form.submitButton>Submit</form.submitButton>
+</BsForm> --}}

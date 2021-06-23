@@ -9,4 +9,5 @@ export default class Router extends EmberRouter {
 Router.map(function() {
   this.route('table');
   this.route('login');
+  this.route('image-page');
 });
