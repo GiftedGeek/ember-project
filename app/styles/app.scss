@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+@import 'node_modules/tailwindcss/dist/base';
+@import 'node_modules/tailwindcss/dist/components';
+@import 'node_modules/tailwindcss/dist/utilities';
+
+// @import './table-col-reorder';
+// @import './table-sorting';
+// @import './table-selection';
+
+ body {
+    font-family: 'Raleway', sans-serif;
+ }
+
+
+
+.stock-table {
+  height: 40vh;
+
+  th {
+    background-color: darken($color: #e6fffa, $amount: 60);
+    color: darken($color: #fff, $amount: 10);
+  }
+
+  td {
+    border-bottom: 1px solid slategray;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  & td + td {
+    border-left: 1px solid slategray;
+  }
+}
+

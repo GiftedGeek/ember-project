@@ -4,3 +4,17 @@
     Inside Image uploader page
   </h2>
 </div>
+<div>
+{{#image-cropper
+  source='sinbad2_800x600.jpg'
+  options=(hash
+    aspectRatio=1
+    viewMode=2
+  ) as |cropper|}}
+
+  {{cropper.on 'crop' action=(action 'crop')}}
+
+{{/image-cropper}}
+
+</div>
+{{!-- On Progress --}}

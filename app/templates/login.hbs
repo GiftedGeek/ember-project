@@ -4,23 +4,18 @@
 </h2>
 
 <div>
-    <form {{on "submit" this.authenticate}}>
+    <form {{on "submit" this.login}}>
         <div>
-            <label for="identification">Login</label>
-            <input id="identification" placeholder="Enter Login" value={{this.identification}} {{on "change"
-                this.updateIdentification}} />
+            <label for="username">Username</label>
+            <input name="username" type="text" placeholder="Enter Username" {{on "change" (fn this.update "username")}}>
         </div>
 
         <div>
             <label for="password">Password</label>
-            <input id="password" placeholder="Enter Password" value={{this.password}} {{on "change"
-                this.updatePassword}} />
+            <input name="password" type="password" placeholder="Enter Password" {{on "change" (fn this.update "password")}}>
         </div>
 
-        <button type="submit" class="button">Login</button>
-        {{#if this.errorMessage}}
-        <p>{{this.errorMessage}}</p>
-        {{/if}}
+        <input type="submit" class="bg-transparent hover:bg-teal-400 text-teal-400 font-semibold hover:text-white py-2 px-4 border border-teal-400 hover:border-transparent rounded" value = "Login">
     </form>
 </div>
 
