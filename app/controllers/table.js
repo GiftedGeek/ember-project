@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-import { computed } from '@ember/object'
+import { computed, action } from '@ember/object';
 
-function createSymbol() {
+let createSymbol = () =>{
   let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   let length = 2 + Math.floor(4 * Math.random()); // [2,5]
   let symbol = '';
@@ -11,22 +11,22 @@ function createSymbol() {
   return symbol;
 }
 
-function createPrice() {
+let createPrice = () => {
   return 0.5 + 500 * Math.random(); // [0.5,500.5);
 }
 
-function formatPrice(price) {
+let formatPrice = (price) => {
   return price.toFixed(2);
 }
 
-function createRow() {
+let createRow = () => {
   return {
     symbol: createSymbol(),
     price: formatPrice(createPrice())
   };
 }
 
-function createRows(num) {
+let createRows = (num) => {
   return Array(num)
     .fill()
     .map(createRow);
@@ -46,9 +46,9 @@ export default class TableController extends Controller {
       return createRows(this.numRows);
     }
 
-    numRows= 100;
+    numRows= 50;
 
-    // @action addRows() {
-    //   this.rows.pushObjects(createRows(parseInt(this.numRows)));
-    // }
+    @action addRows() {
+      this.rows.pushObjects(createRows(parseInt(this.numRows)));
+    }
 }

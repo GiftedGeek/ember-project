@@ -1,20 +1,23 @@
 <NavBar />
 <div>
-  <h2>
+  <h2 class="flex justify-center my-2 text-2xl">
     Inside Image uploader page
   </h2>
 </div>
+
+{{!-- On Progress --}}
 <div>
-{{#image-cropper
-  source='sinbad2_800x600.jpg'
-  options=(hash
-    aspectRatio=1
-    viewMode=2
-  ) as |cropper|}}
+<ImageCropper source='..\public\outerspace_astronaut.jpg' 
+      @options=(hash @aspectRatio=1 
+      @viewMode=2 @dragMode='move' 
+      @minContainerWidth=200
+      @minContainerHeight=200
+      @autoCropArea=1
+      @zoomOnWheel=true ) as |cropper|>
 
-  {{cropper.on 'crop' action=(action 'crop')}}
+  {{!-- {{cropper.on 'crop' action = this.crop}} --}}
+  <cropper.on @event="crop" @action={{this.crop}} />
 
-{{/image-cropper}}
+</ImageCropper>
 
 </div>
-{{!-- On Progress --}}

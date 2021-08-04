@@ -1,21 +1,28 @@
 <NavBar />
-<h2>
+<h2 class="flex justify-center my-2 text-xl">
     Login to continue
 </h2>
 
-<div>
+<div class="flex justify-center">
     <form {{on "submit" this.login}}>
-        <div>
-            <label for="username">Username</label>
-            <input name="username" type="text" placeholder="Enter Username" {{on "change" (fn this.update "username")}}>
+        <div class="my-4">
+            <label class="block" for="username">Username</label>
+            <input name="username" type="text"
+                class="shadow-lg border p-2 border-teal-400 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50 rounded"
+                placeholder="Enter Username" {{on "change" (fn this.update "username" )}}>
         </div>
 
-        <div>
-            <label for="password">Password</label>
-            <input name="password" type="password" placeholder="Enter Password" {{on "change" (fn this.update "password")}}>
+        <div class="my-4">
+            <label class="block" for="password">Password</label>
+            <input name="password" type="password" 
+                class="shadow-lg border p-2 border-teal-400 focus:outline-none rounded"
+                placeholder="Enter Password" {{on "change" (fn this.update "password" )}}>
         </div>
-
-        <input type="submit" class="bg-transparent hover:bg-teal-400 text-teal-400 font-semibold hover:text-white py-2 px-4 border border-teal-400 hover:border-transparent rounded" value = "Login">
+        <div class="flex justify-center justify-around">
+            <input type="submit"
+                class="shadow-xl bg-transparent hover:bg-teal-400 text-teal-400 font-semibold hover:text-white py-2 px-4 border border-teal-400 hover:border-transparent rounded"
+                value="Login">
+        </div>
     </form>
 </div>
 
@@ -24,8 +31,9 @@
 {{/if}}
 
 {{!-- Bootstrap Form --}}
-{{!-- <BsForm @model={{this.login}} @onSubmit={{action "submit"}} as |form|>
-  <form.element @controlType="email" @label="Email" @placeholder="Email" @property="email" />
-  <form.element @controlType="password" @label="Password" @placeholder="Password" @property="password" @helpText="Minimum 6 characters" />
-  <form.submitButton>Submit</form.submitButton>
+{{!-- <BsForm @model={{this.login}} @onSubmit={{action "submit" }} as |form|>
+    <form.element @controlType="email" @label="Email" @placeholder="Email" @property="email" />
+    <form.element @controlType="password" @label="Password" @placeholder="Password" @property="password"
+        @helpText="Minimum 6 characters" />
+    <form.submitButton>Submit</form.submitButton>
 </BsForm> --}}

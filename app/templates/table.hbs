@@ -1,6 +1,6 @@
 <NavBar />
 <div>
-  <h2>
+  <h2 class="flex justify-center my-2 text-2xl">
     Inside table
   </h2>
 </div>
@@ -23,16 +23,16 @@
       <h2 class="text-l border-b-2 border-gray-500 mb-8">
         Actions
       </h2>
-      {{!-- <div class="mb-4">
+      <div class="mb-4">
         Add
-        {{input
+        <input
           class="w-12 mx-1 text-center px-1"
           type="number"
           value=numRows
-          on-key "Enter" this.addRows
-        }}
+          {{on-key "Enter" this.addRows}}
+        />
         rows.
-      </div> --}}
+      </div>
     </div>
   </div>
 </div>
